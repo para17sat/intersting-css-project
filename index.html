@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pricing Plans</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #2e2e2e;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .pricing-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .plan {
+            background-color: #3c3c3c;
+            border-radius: 10px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .plan:hover {
+            transform: translateY(-10px);
+        }
+
+        .basic {
+            border-top: 5px solid #1e90ff;
+        }
+
+        .standard {
+            border-top: 5px solid #ff6347;
+        }
+
+        .premium {
+            border-top: 5px solid #1e90ff;
+        }
+
+        .price {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 20px 0;
+        }
+
+        .order-btn {
+            background-color: #1e90ff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .order-btn:hover {
+            background-color: #104e8b;
+        }
+
+        .standard .order-btn {
+            background-color: #ff6347;
+        }
+
+        .standard .order-btn:hover {
+            background-color: #b22222;
+        }
+    </style>
+</head>
+<body>
+    <div class="pricing-container">
+        <h2>БУГАЛТЕРИЯ ОНЛАЙН</h2>
+        <p>Бұл жерде біздің бугалтеряның мүмкіндіктерімен таныса аласыздар</p>
+        <div class="pricing-grid">
+            <div class="plan basic">
+                <h3>ТОБЫ/ГРУППА</h3>
+                <div class="price">74000тг.</div>
+                <ul>
+                    <li>1F1</li>
+                    <li>1F2</li>
+                    <li>1F3</li>
+                    <li>1F4</li>
+                    <li>1D1</li>
+                    <li>1D2</li>
+                    <li>2F3</li>
+                    <li>2F4</li>
+                    <li>2D1</li>
+                    <li>2D2</li>
+                    <li>3F1</li>
+                    <li>3F2</li>
+                    <li>3D1</li>
+                    <li>3D2</li>
+                </ul>
+                <button class="order-btn" onclick="playAudioAndSpeak('ДРУГ НЕТУ БРАТ НЕТУ АКША АКША АКША.')">ОПЛАТИТЬ</button>
+            </div>
+            <div class="plan standard">
+                <h3>Степендия</h3>
+                <div class="price">44000тг.</div>
+                <p>ТОБЫ/ГРУППА</p>
+                <ul>
+                    <li>1F1</li>
+                    <li>1F3</li>
+                    <li>1D1</li>
+                    <li>2F3</li>
+                    <li>2F4</li>
+                    <li>3F1</li>
+                    <li>3F2</li>
+                </ul>
+                <button class="order-btn" onclick="playAudioAndSpeak('ДРУГ НЕТУ БРАТ НЕТУ АКША АКША АКША.')">ТӨЙЛЕУ</button>
+            </div>
+            <div class="plan premium">
+                <h3>Оқу ақысы</h3>
+                <div class="price">500000тг</div>
+                <p>ТОБЫ/ГРУППА</p>
+                <ul>
+                    <li>1F2</li>
+                    <li>1F4</li>
+                    <li>1D2</li>
+                    <li>2D1</li>
+                    <li>2D2</li>
+                    <li>3D1</li>
+                    <li>3D2</li>
+                </ul>
+                <button class="order-btn" onclick="playAudioAndSpeak('ДРУГ НЕТУ БРАТ НЕТУ АКША АКША АКША.')">ТӨЙЛЕУ</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function playAudioAndSpeak(message) {
+            let utterance = new SpeechSynthesisUtterance(message);
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
